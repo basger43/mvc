@@ -1,0 +1,99 @@
+p{
+	margin: 0;
+	padding: 0;
+}
+.content{
+	width: 80%;
+	border: 2px solid #1A5390;
+	padding: 8px;
+	margin: 0 auto;
+}
+header{
+	background: #1A5390;
+	padding: 10px;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 5px;
+}
+header img{
+
+}
+header h1{
+	float: right;
+	margin-right: 35%;
+	color: #ddd;
+}
+main article h2{
+	border-bottom: 1px dotted #ABB1BA;
+	margin-bottom: 3px;
+}
+.content .search{
+	padding-bottom: 14px;
+    border-bottom: 2px dashed #1D64AC;
+    padding-top: 5px;
+}
+.search button{
+	padding: 4px 7px;
+	cursor: pointer;
+}
+input[value]{
+	cursor: pointer;
+}
+footer{
+	width: 80%;
+	padding: 10px;
+	background: #1D66AE;
+	margin: 0 auto;
+	margin-top: 5px;
+	text-align: center;
+}
+main{
+	width: 70%;
+	float:left;
+	padding-right: 1%;
+	border-right: 2px dotted #272822;
+}
+.content:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+aside{
+	float: right;
+	width: 28%;
+	padding-top: 5px;
+}
+aside h3{
+	text-align: center;
+	background: #408DCA;
+	padding: 10px;
+	margin-bottom: 0;
+	border-bottom: 3px solid #133C69;
+}
+aside ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+aside ul li{
+	border-bottom: 1px solid white;
+}
+aside ul li a{
+	text-decoration: none;
+	display: block;
+	padding: 5px 5px; 
+	background: #82B7E6;
+}
+aside ul li a:hover{
+	background: #97C5EF;
+}
+.form{
+	float: right;
+}
+.form input, select{
+	padding: 5px 2px;
+	font-size: 1em;
+}
+article a{
+	text-decoration: none;
+}

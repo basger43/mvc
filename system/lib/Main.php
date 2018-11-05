@@ -1,4 +1,57 @@
 <?php 
+	class urlLoader{
+		private $url;
+		private $controllerPath = "./app/controllers/";
+		private $controllerName = "Index";
+		private $controller;
+		private $methodName 	= "Index";
+		public function __construct(){
+			$this->getUrl();
+			$this->loadController();
+			$this->callMethod();
+		}
+		private function getUrl(){
+			$this->url = isset($_GET['url'])?$_GET['url']:NULL;
+			if ($this->url != NULL) {
+				$this->url = rtrim($this->url, "/");
+				$this->url = explode("/", $this->url);
+			}else{
+				unset($this->url);
+			}
+		}
+		private function loadController(){
+			if (!isset($this->url[0])) {
+				$filename = $this->controllerPath.$this->controllerName.".php";
+				if (file_exists($filename)) {
+					include $filename;
+					$this->controller = new $this->controllerName();
+					//contorller na thaka obobsthai default controller load hoi
+				}
+			}else{
+				$filename = $this->controllerPath.$this->url[0].".php";
+				if (file_exists($filename)) {
+					include $filename;
+					$this->controller = new $this->url[0]();	
+				}
+			}
+		}
+		private function callMethod(){
+			if (isset($this->url[2])) {
+				$this->controller->{$this->url[1]}($this->url[2]);
+			}else{
+				if (isset($this->url[1])) {
+					$this->controller->{$this->url[1]}();
+				}else{
+					$this->controller->{$this->methodName}();
+					// controller/default controller ache, then default method nibe
+				}
+			}
+		}
+	}
+
+ ?>
+
+<?php 
 	class Main{
 		public $url;
 		public $controller;
